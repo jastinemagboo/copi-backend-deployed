@@ -3,9 +3,10 @@ from models.post_model import Post
 from extensions import db
 from datetime import datetime
 import uuid
-from app import app
 
 def run_seed():
+    from app import app
+
     with app.app_context():
         if not Post.query.first():
             post = Post(
